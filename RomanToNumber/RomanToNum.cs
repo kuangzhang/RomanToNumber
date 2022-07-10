@@ -4,14 +4,42 @@ using System.Text;
 
 namespace RomanToNumber
 {
-    public class RomanToNum
+    /// <summary>
+    /// 
+    /// </summary>
+    public static class RomanToNum
     {
-
-
-
-        public static int FindValue(char _Chr)
+        /// <summary>
+        /// Static Class to Convert Roman Numerals to Arobic numbers
+        /// </summary>
+        /// <param name="_temp">RomanNumeral in String</param>
+        /// <returns></returns>
+        public static int RomanNumeralToNumber(string _temp)
         {
-            switch (_Chr)
+            int _return = 0;
+            for (int i = 0; i < _temp.Length; i++)
+            {
+                if (i > 0 && FindValue(_temp[i]) > FindValue(_temp[i - 1]))
+                {
+                    _return += FindValue(_temp[i]) - FindValue(_temp[i - 1]) * 2;
+                }
+                else
+                {
+                    _return += FindValue(_temp[i]);
+                }
+            }
+
+            return _return;
+        }
+
+        /// <summary>
+        /// Find Roman Letters Numeric Number
+        /// </summary>
+        /// <param name="_temp">Single Char</param>
+        /// <returns></returns>
+        public static int FindValue(char _temp)
+        {
+            switch (_temp)
             {
                 case 'I': return 1;
                 case 'V': return 5;
