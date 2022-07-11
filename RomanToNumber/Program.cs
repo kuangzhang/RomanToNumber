@@ -11,24 +11,63 @@ namespace RomanToNumber
             string _Test;
 
             //Test for Case 4
-            _Test = "IV";
+            _Test = "III";
             Console.WriteLine("Roman Numeric value: " + _Test + " Hint (Age of My Neice)");
             Console.WriteLine("Numeric value:");
             Console.WriteLine(RomanToNumber.RomanToNum.RomanNumeralToNumber(_Test));
    
             //Ramdom Test
-            _Test = "LVI";
+            _Test = "IV";
             Console.WriteLine("Roman Numeric value: " + _Test + " Hint (This year Super Bowl)");
             Console.WriteLine("Numeric value:");
-            Console.WriteLine(RomanToNumber.RomanToNum.RomanNumeralToNumber(_Test));
+            Console.WriteLine(RomanToNum.RomanNumeralToNumber(_Test));
 
             //Ramdom Test
-            _Test = "MMXXII";
+            _Test = "VI";
             Console.WriteLine("Roman Numeric value: " + _Test + " Hint (Current Year)");
             Console.WriteLine("Numeric value:");
-            Console.WriteLine(RomanToNumber.RomanToNum.RomanNumeralToNumber(_Test)); 
+            Console.WriteLine(RomanToNum.RomanNumeralToNumber(_Test));
+             
+            _Test = "VIXCMB";
+            if (!RomanToNum.IsValidRomanNumeralLettersOnly(_Test))
+            {
+                Console.WriteLine("Roman Numeral value:" + _Test + " is Not Valid!");
+            }
+            else
+            {
+                Console.WriteLine("Roman Numeral value " + _Test + " is Valid!");
+            }  
+            _Test = "III";
+            if (!RomanToNum.IsValidRomanNumeralLettersOnly(_Test))
+            {
+                Console.WriteLine("Roman Numeral value:" + _Test + " is Not Valid!");
+            }
+            else
+            {
+                Console.WriteLine("Roman Numeral value " + _Test + " is Valid!");
+            }
+
+            _Test = "VIXCMB";
+            if (!RomanToNum.IsValidRomanNumeralStrict(_Test))
+            {
+                Console.WriteLine("Roman Numeral value:" + _Test + " is Not Valid!");
+            }
+            else
+            {
+                Console.WriteLine("Roman Numeral value " + _Test + " is Valid!");
+            }
+            _Test = "XIV";
+            if (!RomanToNum.IsValidRomanNumeralStrict(_Test))
+            {
+                Console.WriteLine("Roman Numeral value:" + _Test + " is Not Valid!");
+            }
+            else
+            {
+                Console.WriteLine("Roman Numeral value " + _Test + " is Valid!");
+            }
 
         }
+         
 
 
 
